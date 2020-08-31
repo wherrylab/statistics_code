@@ -34,6 +34,31 @@ out <- cor.mtest.nonparam(df1 = df1, df2 = df2)
 
 The output is a list with matrix elements "scor", "p", "fdr", and "n" referring to matrices of pairwise Spearman rank correlation coefficients, P-values, FDR-values, and number of pairwise complete observations, respectively.
 
+## Plotting
+
+To create correlation matrix plots similar to Mathew *et al.* 2020, the following code may be used for reference:
+
+library(corrplot)
+library(RColorBrewer)
+
+heatcolors1 <- colorRampPalette( rev(brewer.pal(11, "RdBu")) )(25)
+
+corrplot(
+  corr = out$scor,
+  method="square",
+  p.mat = out$p,
+  sig.level = c(.001, .01, .05),
+  insig = "label_sig",
+  pch.cex = .6,
+  pch.col = "white",
+  col = heatcolors1,
+  tl.col = "black",
+  tl.cex = 0.75,
+  tl.srt = 60,
+  cl.pos='n',
+  addgrid.col = ifelse(out$fdr < 0.05, "black", rgb(0.6,0.6,0.6,0.2))
+)
+
 ## Disclaimer
 
 The code is provided as is. Use and modify at your own risk.
