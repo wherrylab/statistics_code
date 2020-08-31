@@ -20,6 +20,10 @@ Note that "factor" or "character" variables will automatically be expanded to bi
 
 ## Usage
 
+The relevant functions can be accessed by downloading and running source() on the R code file:
+
+source("./NonParametricCorrelationCode.R")
+
 To calculate self-correlation between all columns of a data frame "df" with itself:
 
 out <- cor.mtest.nonparam(df1 = df, df2 = df)
