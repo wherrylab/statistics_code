@@ -73,6 +73,6 @@ The code is provided as is. Use and modify at your own risk.
 
 ## Contact
 
-Questions about the code can be directed to the principle code author: Derek A. Oldridge
+Questions about the code can be directed to the principal code author: Derek A. Oldridge
 
 Email: derek.oldridge@pennmedicine.upenn.edu
