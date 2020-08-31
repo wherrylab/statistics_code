@@ -22,15 +22,21 @@ Note that "factor" or "character" variables will automatically be expanded to bi
 
 The relevant functions can be accessed by downloading and running source() on the R code file:
 
+```{r}
 source("./NonParametricCorrelationCode.R")
+```
 
 To calculate self-correlation between all columns of a data frame "df" with itself:
 
+```{r}
 out <- cor.mtest.nonparam(df1 = df, df2 = df)
+```
 
 To calculate non-self-correlation between all columns of a data frame "df1" with another data frame "df2":
 
+```{r}
 out <- cor.mtest.nonparam(df1 = df1, df2 = df2)
+```
 
 The output is a list with matrix elements "scor", "p", "fdr", and "n" referring to matrices of pairwise Spearman rank correlation coefficients, P-values, FDR-values, and number of pairwise complete observations, respectively.
 
@@ -38,6 +44,7 @@ The output is a list with matrix elements "scor", "p", "fdr", and "n" referring 
 
 To create correlation matrix plots similar to Mathew *et al.* 2020, the following code may be used for reference:
 
+```{r}
 library(corrplot)
 library(RColorBrewer)
 
@@ -58,6 +65,7 @@ corrplot(
   cl.pos='n',
   addgrid.col = ifelse(out$fdr < 0.05, "black", rgb(0.6,0.6,0.6,0.2))
 )
+```
 
 ## Disclaimer
 
